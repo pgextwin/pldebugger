@@ -1,0 +1,37 @@
+{
+  "contractVersion": 2,
+  "extension": "pldebugger",
+  "smokeTest": {
+    "script": "windows/ci/smoke-test.ps1"
+  },
+  "runtimeRequirements": {
+    "extensionCreation": "required",
+    "preload": "shared",
+    "backgroundWorker": false,
+    "clientExecutable": {
+      "required": false,
+      "packagePaths": []
+    }
+  },
+  "testSetup": {
+    "preload": "shared",
+    "backgroundWorker": false,
+    "settings": [
+      {"name": "shared_preload_libraries", "value": "plugin_debugger"}
+    ]
+  },
+  "coverage": {
+    "createExtension": "covered",
+    "backgroundWorker": "not-applicable",
+    "clientExecutable": "not-applicable",
+    "serverLogAssertions": "not-applicable",
+    "upgrade": "not-covered"
+  },
+  "functionalScenarios": [
+    {
+      "id": "preload-and-query-debugger-proxy",
+      "description": "Preloads plugin_debugger, creates SQL extension pldbgapi at version 1.1, and queries the native debugger proxy API for the current PostgreSQL version and backend PID.",
+      "evidence": ["sql-result"]
+    }
+  ]
+}
