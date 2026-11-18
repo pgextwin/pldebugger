@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "name": "pldebugger",
+  "upstream": {
+    "repository": "EnterpriseDB/pldebugger",
+    "ref": "v1.10",
+    "version": "1.10",
+    "commit": "bf57aa61d5eb131ece767cd7a9db0c167787d1e6"
+  },
+  "postgresql": {
+    "majors": [15, 16, 17, 18]
+  },
+  "windows": {
+    "architecture": "x64"
+  },
+  "license": {
+    "verifyAgainstUpstream": true,
+    "files": [
+      {
+        "repositoryPath": "README-pldebugger.md",
+        "upstreamPath": "README-pldebugger.md"
+      }
+    ]
+  }
+}

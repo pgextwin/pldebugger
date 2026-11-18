@@ -1,0 +1,32 @@
+name: Windows CI/CD
+on:
+  pull_request:
+  # The shared candidate updater calls this workflow for its candidate branch.
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  windows:
+    uses: pgextwin/build/.github/workflows/build-extension.yml@aa9278a449c5435213172dcfa2c535ae87b23b38
+    with:
+      extension_config_path: config/extension.json
+      test_contract_path: config/test-contract.json
+
+  windows_required:
+    name: Windows required summary
+    if: ${{ always() && !startsWith(github.ref, 'refs/heads/release/') }}
+    needs: windows
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test required Windows aggregate allow/deny contract
+        run: python3 tests/test_required_windows_summary.py
+      - name: Require full maintained-PG Windows matrix success
+        env:
+          WINDOWS_MATRIX_RESULT: ${{ needs.windows.result }}
+        run: python3 scripts/required_windows_summary.py
