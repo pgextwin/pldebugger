@@ -5,10 +5,10 @@
     "repository": "EnterpriseDB/pldebugger",
     "ref": "v1.10",
     "version": "1.10",
-    "commit": "bf57aa61d5eb131ece767cd7a9db0c167787d1e6"
+    "commit": "1dd9a9abfc65e6e905f61ff2731f871500f9b82a"
   },
   "postgresql": {
-    "majors": [15, 16, 17, 18]
+    "majors": [15, 16, 17, 18, 19]
   },
   "windows": {
     "architecture": "x64"
