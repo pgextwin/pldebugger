@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "distribution": "dll-sql",
+  "files": [
+    {
+      "source": "upstream",
+      "path": "pldbgapi.control",
+      "destination": "share/extension/pldbgapi.control",
+      "targets": [
+        "install",
+        "zip"
+      ]
+    },
+    {
+      "source": "upstream",
+      "path": "pldbgapi--1.1.sql",
+      "destination": "share/extension/pldbgapi--1.1.sql",
+      "targets": [
+        "install",
+        "zip"
+      ]
+    },
+    {
+      "source": "upstream",
+      "path": "pldbgapi--1.0--1.1.sql",
+      "destination": "share/extension/pldbgapi--1.0--1.1.sql",
+      "targets": [
+        "install",
+        "zip"
+      ]
+    },
+    {
+      "source": "upstream",
+      "path": "pldbgapi--unpackaged--1.1.sql",
+      "destination": "share/extension/pldbgapi--unpackaged--1.1.sql",
+      "targets": [
+        "install",
+        "zip"
+      ]
+    },
+    {
+      "source": "upstream",
+      "path": "plugin_debugger.dll",
+      "destination": "lib/plugin_debugger.dll",
+      "targets": [
+        "install",
+        "zip"
+      ]
+    },
+    {
+      "source": "packaging",
+      "path": "LICENSE",
+      "destination": "LICENSE",
+      "targets": [
+        "zip"
+      ]
+    },
+    {
+      "source": "license",
+      "path": "README-pldebugger.md",
+      "destination": "README-pldebugger.md",
+      "targets": [
+        "zip"
+      ]
+    }
+  ],
+  "packageInfo": [
+    "pldebugger Windows package",
+    "",
+    "Upstream repository: {upstreamRepository}",
+    "Upstream ref:        {upstreamRef}",
+    "Upstream commit:     {upstreamCommit}",
+    "pldebugger version:  {version}",
+    "SQL default_version: 1.1",
+    "PostgreSQL major:    {pgMajor}",
+    "PostgreSQL tested:   {pgTested}",
+    "Architecture:        Windows x64",
+    "Compiler:            MSVC x64",
+    "License:             Artistic-2.0; see LICENSE and README-pldebugger.md",
+    "",
+    "Obtain the exact upstream source:",
+    "  git clone https://github.com/{upstreamRepository}.git",
+    "  git -C pldebugger checkout --detach {upstreamCommit}",
+    "",
+    "Add plugin_debugger to shared_preload_libraries, restart PostgreSQL,",
+    "and run CREATE EXTENSION pldbgapi in the target database."
+  ],
+  "packageInfoFinalNewline": true,
+  "sqlVersion": "1.1"
+}
