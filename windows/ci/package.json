@@ -1,6 +1,8 @@
 {
   "schemaVersion": 1,
   "distribution": "dll-sql",
+  "sqlExtensionName": "pldbgapi",
+  "sqlVersion": "1.1",
   "files": [
     {
       "source": "upstream",
@@ -48,7 +50,7 @@
       ]
     },
     {
-      "source": "packaging",
+      "source": "license",
       "path": "LICENSE",
       "destination": "LICENSE",
       "targets": [
@@ -85,6 +87,5 @@
     "Add plugin_debugger to shared_preload_libraries, restart PostgreSQL,",
     "and run CREATE EXTENSION pldbgapi in the target database."
   ],
-  "packageInfoFinalNewline": true,
-  "sqlVersion": "1.1"
+  "packageInfoFinalNewline": true
 }
