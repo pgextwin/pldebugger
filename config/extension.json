@@ -19,6 +19,11 @@
       {
         "repositoryPath": "README-pldebugger.md",
         "upstreamPath": "README-pldebugger.md"
+      },
+      {
+        "origin": "packaging",
+        "repositoryPath": "LICENSE",
+        "sha256": "bae466ac8d7100c304fe76632ccc627203a3897d3f7166f3cce00fb9df8c2074"
       }
     ]
   },
